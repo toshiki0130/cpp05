@@ -1,0 +1,8 @@
+
+.vscode
+obj/
+
+!*.cpp
+!*.hpp
+!Makefile
+!.gitignore
