@@ -119,6 +119,9 @@ void test_bureaucrat_decrement()
     }
 }
 
+/* ===========================================================
+ *                  Shrubbery Test
+ * ===========================================================*/
 # include "ShrubberyCreationForm.hpp"
 
 void test_shrubbery_creation_form_orthodox_canonical_form()
@@ -244,6 +247,261 @@ void test_shrubbery_creation_form_execute()
     }
 }
 
+/* ===========================================================
+ *                    Robotom Test
+ * ========================================================== */
+# include "RobotomyRequestForm.hpp"
+
+void test_robotomy_creation_form_orthodox_canonical_form()
+{
+    std::cout << "wwwwww test_robotomy_creation_form_orthodox_canonical_form wwwwww" << std::endl;
+    std::cout << "=== orthodox canonical form ===" << std::endl;
+    RobotomyRequestForm a;
+    RobotomyRequestForm b(a);
+    RobotomyRequestForm c;
+    c = a;
+}
+
+void test_robotomy_creation_form_constructor()
+{
+    std::cout << "wwwwww test_robotomy_creation_form_constructor wwwwww" << std::endl;
+    std::cout << "=== constructor: case of normal ===" << std::endl;
+    try {
+        RobotomyRequestForm a("normal");
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+void test_robotomy_creation_form_beSigned()
+{
+    std::cout << "wwwwww test_robotomy_creation_form_beSigned wwwwww" << std::endl;
+    std::cout << "=== success case ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 71);
+        RobotomyRequestForm a("normal"); // higher than 72, 45; grade to sign, execute
+        a.beSigned(b);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== success case2 ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 72);
+        RobotomyRequestForm a("normal"); // higher than 72,45; grade to sign, execute
+        a.beSigned(b);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== fail case ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 73);
+        RobotomyRequestForm a("normal"); // higher than 72, 45: grade to sign, execute
+        a.beSigned(b);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+void test_robotomy_creation_form_execute()
+{
+    std::cout << "wwwwww test_robotomy_creation_form_execute wwwwww" << std::endl;
+    std::cout << "=== success case ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 71);
+        Bureaucrat c("Takefusa", 44);
+        RobotomyRequestForm a("success1"); // higher than 72, 45; grade to sign, grade to execute 
+        a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== success case2 ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 72);
+        Bureaucrat c("Takefusa", 45);
+        RobotomyRequestForm a("success2"); // higher than 72, 45; grade to sign, grade to execute 
+        a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== success case3 ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 1);
+        Bureaucrat c("Takefusa", 1);
+        RobotomyRequestForm a("success3"); // higher than 72, 45; grade to sign, grade to execute 
+        a.beSigned(b);
+        c.executeForm(a);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== fail case: low grade to execute ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 72);
+        Bureaucrat c("Takefusa", 46);
+        RobotomyRequestForm a("fail1"); // higher than 72, 45; grade to sign, grade to execute 
+        a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== fail case: execute not signed ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 72);
+        Bureaucrat c("Takefusa", 45);
+        RobotomyRequestForm a("fail1"); // higher than 72, 45; grade to sign, grade to execute 
+        // a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+/* ===========================================================
+ *               PresidentialPardonForm Test
+ * ========================================================== */
+# include "PresidentialPardonForm.hpp"
+
+void test_presidential_creation_form_orthodox_canonical_form()
+{
+    std::cout << "wwwwww test_presidential_creation_form_orthodox_canonical_form wwwwww" << std::endl;
+    std::cout << "=== orthodox canonical form ===" << std::endl;
+    PresidentialPardonForm a;
+    PresidentialPardonForm b(a);
+    PresidentialPardonForm c;
+    c = a;
+}
+
+void test_presidential_creation_form_constructor()
+{
+    std::cout << "wwwwww test_presidential_creation_form_constructor wwwwww" << std::endl;
+    std::cout << "=== constructor: case of normal ===" << std::endl;
+    try {
+        PresidentialPardonForm a("normal");
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+void test_presidential_creation_form_beSigned()
+{
+    std::cout << "wwwwww test_presidential_creation_form_beSigned wwwwww" << std::endl;
+    std::cout << "=== success case ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 24);
+        PresidentialPardonForm a("normal"); // higher than 25,5; grade to sign, execute
+        a.beSigned(b);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== success case2 ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 25);
+        PresidentialPardonForm a("normal"); // higher than 25,5; grade to sign, execute
+        a.beSigned(b);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== fail case ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 26);
+        PresidentialPardonForm a("normal"); // higher than 25,5: grade to sign, execute
+        a.beSigned(b);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
+void test_presidential_creation_form_execute()
+{
+    std::cout << "wwwwww test_presidential_creation_form_execute wwwwww" << std::endl;
+    std::cout << "=== success case ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 23);
+        Bureaucrat c("Takefusa", 3);
+        PresidentialPardonForm a("success1"); // higher than 25,5; grade to sign, grade to execute 
+        a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== success case2 ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 25);
+        Bureaucrat c("Takefusa", 5);
+        PresidentialPardonForm a("success2"); // higher than 25,5; grade to sign, grade to execute 
+        a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== success case3 ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 1);
+        Bureaucrat c("Takefusa", 1);
+        PresidentialPardonForm a("success3"); // higher than 25, 5; grade to sign, grade to execute 
+        a.beSigned(b);
+        c.executeForm(a);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== fail case: low grade to execute ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 25);
+        Bureaucrat c("Takefusa", 6);
+        PresidentialPardonForm a("fail1"); // higher than 25, 5; grade to sign, grade to execute 
+        a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== fail case: execute not signed ===" << std::endl;
+    try {
+        Bureaucrat b("Toshiki", 25);
+        Bureaucrat c("Takefusa", 5);
+        PresidentialPardonForm a("fail1"); // higher than 25,5; grade to sign, grade to execute 
+        // a.beSigned(b);
+        a.execute(c);
+        std::cout << a << std::endl;
+    }
+    catch(std::exception &e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
 
 int main()
 {
@@ -260,4 +518,17 @@ int main()
     test_shrubbery_creation_form_constructor();
     test_shrubbery_creation_form_beSigned();
     test_shrubbery_creation_form_execute();
+
+    // test for RobotomyRequestForm
+    test_robotomy_creation_form_orthodox_canonical_form();
+    test_robotomy_creation_form_constructor();
+    test_robotomy_creation_form_beSigned();
+    test_robotomy_creation_form_execute();
+
+    // test for PresidentialPardonForm
+    test_presidential_creation_form_orthodox_canonical_form();
+    test_presidential_creation_form_constructor();
+    test_presidential_creation_form_beSigned();
+    test_presidential_creation_form_execute();
+
 }
