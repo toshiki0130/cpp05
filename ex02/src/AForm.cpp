@@ -208,7 +208,6 @@ AForm::GradeTooLowException::GradeTooLowException(int grade)
     std::ostringstream oss;
     oss << "The Grade is too low: " << grade;
     _reason = oss.str(); 
-
 }
 
 const char *AForm::GradeTooLowException::what() const throw()
