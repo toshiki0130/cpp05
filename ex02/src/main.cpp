@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 #include <cassert>
 /* ===================================
@@ -117,6 +119,48 @@ void test_bureaucrat_decrement()
     {
         std::cerr << e.what() << std::endl;
     }
+}
+
+void test_bureaucrat_signForm()
+{
+    std::cout << "wwwwww test_bureaucrat_signForm wwwwww" << std::endl;
+    std::cout << "=== test shrubbery: success===" << std::endl;
+    try
+    {
+        Bureaucrat b("Bureaucrat for shrubbery", 1);
+        ShrubberyCreationForm f("normal");
+        b.signForm(f);
+        std::cout << b << std::endl; // 148
+    }
+    catch (std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== test robotomy: success===" << std::endl;
+    try
+    {
+        Bureaucrat b("Bureaucrat for robotomy", 1);
+        RobotomyRequestForm f("normal");
+        b.signForm(f);
+        std::cout << b << std::endl; // 148
+    }
+    catch (std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+    std::cout << "=== test presidential: success===" << std::endl;
+    try
+    {
+        Bureaucrat b("Bureaucrat for presidential", 1);
+        RobotomyRequestForm f("normal");
+        b.signForm(f);
+        std::cout << b << std::endl; // 148
+    }
+    catch (std::exception & e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
+
 }
 
 /* ===========================================================
@@ -512,6 +556,7 @@ int main()
     test_bureaucrat_too_low_constructor();
     test_bureaucrat_increment();
     test_bureaucrat_decrement();
+    test_bureaucrat_signForm();
 
     // test for ShrubberyCreationForm
     test_shrubbery_creation_form_orthodox_canonical_form();
