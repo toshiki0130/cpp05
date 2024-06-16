@@ -16,7 +16,7 @@ public:
 	// orthodox canonical form
 	AForm();
 	AForm(const AForm &ob);
-	~AForm();
+	virtual ~AForm();
 	AForm& operator=(const AForm &ob);
 
 	// constructor
@@ -27,7 +27,7 @@ public:
 	// parameter. It changes the form status to signed if the bureaucrat’s grade is high enough
 	// (higher or egal to the required one).
 	void beSigned(const Bureaucrat& ob);
-	void execute(Bureaucrat const & executor) const;
+	void execute(const Bureaucrat& executor) const;
 	// getters: Same as before, write getters for all attributes
 	std::string getName() const;
 	bool		getIsSigned() const;
