@@ -11,7 +11,7 @@ public:
     RobotomyRequestForm& operator=(const RobotomyRequestForm& ob);
 
 	// constructor
-    RobotomyRequestForm(std::string const& target);
+    explicit RobotomyRequestForm(std::string const& target);
 
     // member functions
     void executeAction() const;

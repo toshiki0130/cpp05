@@ -11,7 +11,7 @@ public:
     ShrubberyCreationForm& operator=(const ShrubberyCreationForm& ob);
 
 	// constructor
-    ShrubberyCreationForm(std::string const& target);
+    explicit ShrubberyCreationForm(std::string const& target);
 
     // member functions
     void executeAction() const;

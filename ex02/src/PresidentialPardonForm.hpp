@@ -11,7 +11,7 @@ public:
     PresidentialPardonForm& operator=(const PresidentialPardonForm& ob);
 
 	// constructor
-    PresidentialPardonForm(std::string const& target);
+    explicit PresidentialPardonForm(std::string const& target);
 
     // member functions
     void executeAction() const;
