@@ -3,6 +3,9 @@
 # include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm {
+private:
+    // member functions
+    void executeAction() const;
 public:
     // orthodox canonical form
     RobotomyRequestForm();
@@ -12,9 +15,6 @@ public:
 
 	// constructor
     explicit RobotomyRequestForm(std::string const& target);
-
-    // member functions
-    void executeAction() const;
 };
 
 #endif

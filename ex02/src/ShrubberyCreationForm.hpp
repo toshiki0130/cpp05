@@ -3,6 +3,9 @@
 # include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm {
+private:
+    // member functions
+    void executeAction() const;
 public:
     // orthodox canonical form
     ShrubberyCreationForm();
@@ -12,9 +15,6 @@ public:
 
 	// constructor
     explicit ShrubberyCreationForm(std::string const& target);
-
-    // member functions
-    void executeAction() const;
 };
 
 #endif

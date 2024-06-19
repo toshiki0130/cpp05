@@ -3,6 +3,9 @@
 # include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm {
+private:
+    // member functions
+    void executeAction() const;
 public:
     // orthodox canonical form
     PresidentialPardonForm();
@@ -12,9 +15,6 @@ public:
 
 	// constructor
     explicit PresidentialPardonForm(std::string const& target);
-
-    // member functions
-    void executeAction() const;
 };
 
 #endif
