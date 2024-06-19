@@ -547,6 +547,31 @@ void test_presidential_creation_form_execute()
     }
 }
 
+void test_polymorphism()
+{
+    AForm *af_ptr_for_shrubbery;
+    AForm *af_ptr_for_robotomy;
+    AForm *af_ptr_for_presidential;
+    Bureaucrat b("Toshiki", 1);
+
+    af_ptr_for_shrubbery = new ShrubberyCreationForm("target of shrubbery");
+    af_ptr_for_robotomy = new  RobotomyRequestForm("target of robotomy");
+    af_ptr_for_presidential =  new PresidentialPardonForm("target of presidential");
+
+    af_ptr_for_shrubbery->beSigned(b);
+    af_ptr_for_robotomy->beSigned(b);
+    af_ptr_for_presidential->beSigned(b);
+
+    b.signForm(*af_ptr_for_shrubbery);
+    b.signForm(*af_ptr_for_robotomy);
+    b.signForm(*af_ptr_for_presidential);
+
+    delete af_ptr_for_shrubbery;
+    delete af_ptr_for_robotomy;
+    delete af_ptr_for_presidential;
+
+}
+
 int main()
 {
     // test for Bureaucrat
@@ -576,4 +601,5 @@ int main()
     test_presidential_creation_form_beSigned();
     test_presidential_creation_form_execute();
 
+    test_polymorphism();
 }
