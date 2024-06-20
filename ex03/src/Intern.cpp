@@ -50,7 +50,7 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target)
 {
     for (int i = 0; i < sizeof(_forms) / sizeof(*_forms); i++) {
         if (formName == _forms[i]->getName()) {
-            std::cout <<  "Intern create " << formName << std::endl;
+            std::cout <<  "Intern creates " << formName << std::endl;
             return _forms[i]->makeCopy(target);
         }
     }
