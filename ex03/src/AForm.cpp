@@ -250,6 +250,6 @@ std::ostream& operator<<(std::ostream& os, const AForm& x)
        << "Is Signed?: " << (x.getIsSigned() ? "signed" : "unsigned") << ", "
        << "grade to sign: " << x.getGradeToSign() << ", "
        << "grade to execute: " << x.getGradeToExecute() << ", " 
-       << "target: " << x.getTarget() << "." << std::endl;
+       << "target: " << x.getTarget() << ".";
     return os;
 }
