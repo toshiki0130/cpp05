@@ -4,7 +4,9 @@
 
 class PresidentialPardonForm : public AForm {
 private:
+    // member functions
     void executeAction() const;
+    AForm* makeCopy(const std::string& target) const;
 public:
     // orthodox canonical form
     PresidentialPardonForm();
@@ -14,9 +16,6 @@ public:
 
 	// constructor
     PresidentialPardonForm(std::string const& target);
-
-    // member functions
-    AForm* makeCopy(const std::string& target) const;
 };
 
 #endif

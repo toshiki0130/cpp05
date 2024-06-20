@@ -4,7 +4,9 @@
 
 class RobotomyRequestForm : public AForm {
 private:
+    // member functions
     void executeAction() const;
+    AForm* makeCopy(const std::string& target) const;
 public:
     // orthodox canonical form
     RobotomyRequestForm();
@@ -14,9 +16,6 @@ public:
 
 	// constructor
     RobotomyRequestForm(std::string const& target);
-
-    // member functions
-    AForm* makeCopy(const std::string& target) const;
 };
 
 #endif
