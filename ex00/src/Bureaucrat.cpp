@@ -120,7 +120,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException()
 #endif
 }
 
-Bureaucrat::GradeTooHighException::~GradeTooHighException()
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
 {
 #if DEBUG
     std::cout << "[Bureaucrat::GradeTooHighException destructor is called]" << std::endl;
@@ -151,7 +151,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 #endif
 }
 
-Bureaucrat::GradeTooLowException::~GradeTooLowException()
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
 {
 #if DEBUG
     std::cout << "[Bureaucrat::GradeTooLowException destructor is called]" << std::endl;

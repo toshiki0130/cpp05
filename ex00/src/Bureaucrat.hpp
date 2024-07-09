@@ -30,7 +30,7 @@ public:
             std::string _reason;
         public:
             GradeTooHighException();
-            ~GradeTooHighException();
+            ~GradeTooHighException() throw();
             explicit GradeTooHighException(int grade);
             const char* what() const throw();
     };
@@ -40,7 +40,7 @@ public:
             std::string _reason;
         public:
             GradeTooLowException();
-            ~GradeTooLowException();
+            ~GradeTooLowException() throw();
             explicit GradeTooLowException(int grade);
             const char* what() const throw();
     };
