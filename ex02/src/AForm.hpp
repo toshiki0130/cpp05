@@ -43,7 +43,7 @@ public:
             std::string _reason;
         public:
             GradeTooHighException();
-            ~GradeTooHighException();
+            ~GradeTooHighException() throw();
             explicit GradeTooHighException(int grade);
             const char* what() const throw();
     };
@@ -53,14 +53,14 @@ public:
             std::string _reason;
         public:
             GradeTooLowException();
-            ~GradeTooLowException();
+            ~GradeTooLowException() throw();
             explicit GradeTooLowException(int grade);
             const char* what() const throw();
     };
 	class FormNotSignedException : public std::exception {
 		public:
 			FormNotSignedException();
-			~FormNotSignedException();
+			~FormNotSignedException() throw();
 			const char* what() const throw();
 	};
 };

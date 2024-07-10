@@ -144,7 +144,7 @@ Form::GradeTooHighException::GradeTooHighException()
 #endif
 }
 
-Form::GradeTooHighException::~GradeTooHighException()
+Form::GradeTooHighException::~GradeTooHighException() throw()
 {
 #if DEBUG
     std::cout << "[Form::GradeTooHighException destructor is called]" << std::endl;
@@ -175,7 +175,7 @@ Form::GradeTooLowException::GradeTooLowException()
 #endif
 }
 
-Form::GradeTooLowException::~GradeTooLowException()
+Form::GradeTooLowException::~GradeTooLowException() throw()
 {
 #if DEBUG
     std::cout << "[Form::GradeTooLowException destructor is called]" << std::endl;

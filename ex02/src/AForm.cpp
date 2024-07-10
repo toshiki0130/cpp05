@@ -165,7 +165,7 @@ AForm::GradeTooHighException::GradeTooHighException()
 #endif
 }
 
-AForm::GradeTooHighException::~GradeTooHighException()
+AForm::GradeTooHighException::~GradeTooHighException() throw()
 {
 #if DEBUG
     std::cout << "[AForm::GradeTooHighException destructor is called]" << std::endl;
@@ -196,7 +196,7 @@ AForm::GradeTooLowException::GradeTooLowException()
 #endif
 }
 
-AForm::GradeTooLowException::~GradeTooLowException()
+AForm::GradeTooLowException::~GradeTooLowException() throw()
 {
 #if DEBUG
     std::cout << "[AForm::GradeTooLowException destructor is called]" << std::endl;
@@ -225,7 +225,7 @@ AForm::FormNotSignedException::FormNotSignedException()
 #endif
 }
 
-AForm::FormNotSignedException::~FormNotSignedException()
+AForm::FormNotSignedException::~FormNotSignedException() throw()
 {
 #if DEBUG
     std::cout << "[AForm::FormNotSignedException destructor is called]" << std::endl;
