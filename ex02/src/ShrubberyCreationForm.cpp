@@ -57,37 +57,60 @@ void ShrubberyCreationForm::executeAction() const
 {
     const std::string filename = getTarget() + "_shrubbery";
     //std::ofstream file((getTarget() + "_shrubbery").c_str()); 
-    std::ofstream file(filename);
+    std::ofstream file(filename.c_str());
     if (!file) {
         std::cerr << "Error: Could not open file" << std::endl;
         return ;
     }
     
-    file << R"(
-                      v .   ._, |_  .,
-           `-._\/  .  \ /    |/_
-               \\  _\, y | \//
-         _\_.___\\, \\/ -.\||
-           `7-,--.`._||  / / ,
-           /'     `-. `./ / |/_.'
-                     |    |//
-                     |_    /
-                     |-   |
-                     |   =|
-                     |    |
---------------------/ ,  . \--------._
+/*                    v .   ._, |_  .,
+            `-._\/  .  \ /    |/_
+                \\  _\, y | \//
+          _\_.___\\, \\/ -.\||
+            `7-,--.`._||  / / ,
+            /'     `-. `./ / |/_.'
+                      |    |//
+                      |_    /
+                      |-   |
+                      |   =|
+                      |    |
+ --------------------/ ,  . \--------._
 
 
 
-       _-_
-    /~~   ~~\
- /~~         ~~\
-{               }
- \  _-     -_  /
-   ~  \\ //  ~
-_- -   | | _- _
-  _ -  | |   -_
-      // \\)";
+        _-_
+     /~~   ~~\\
+  /~~         ~~\\
+ {               }
+  \  _-     -_  /
+    ~  \\ //  ~
+ _- -   | | _- _
+   _ -  | |   -_
+       // \\)
+*/
+
+    file << "                       v .   ._, |_  .,    " << std::endl;
+    file << "            `-._\\/  .  \\ /    |/_    " << std::endl;
+    file << "                \\  _\\, y | \\//    " << std::endl;
+    file << "          _\\_.___\\, \\/ -.\\||    " << std::endl;
+    file << "            `7-,--.`._||  / / ,    " << std::endl;
+    file << "            /'     `-. `./ / |/_.'    " << std::endl;
+    file << "                      |    |//    " << std::endl;
+    file << "                      |_    /    " << std::endl;
+    file << "                      |-   |    " << std::endl;
+    file << "                      |   =|    " << std::endl;
+    file << "                      |    |    " << std::endl;
+    file << " --------------------/ ,  . \\--------.      " << std::endl;
+    file << std::endl;
+    file << "        _-_    " << std::endl;
+    file << "     /~~   ~~\\    " << std::endl;
+    file << "  /~~         ~~\\    " << std::endl;
+    file << " {               }    " << std::endl;
+    file << "  \\  _-     -_  /    " << std::endl;
+    file << "    ~  \\ //  ~    " << std::endl;
+    file << " _- -   | | _- _    " << std::endl;
+    file << "   _ -  | |   -_    " << std::endl;
+    file << "       // \\    " << std::endl;
     
     file.close();
 }
