@@ -26,8 +26,8 @@ public:
 	// 	Add also a beSigned() member function to the Form that takes a Bureaucrat as
 	// parameter. It changes the form status to signed if the bureaucrat’s grade is high enough
 	// (higher or egal to the required one).
-	void beSigned(const Bureaucrat& ob);
-	void execute(const Bureaucrat& executor) const;
+	void beSigned(Bureaucrat const & ob);
+	void execute(Bureaucrat const & executor) const;
 	// getters: Same as before, write getters for all attributes
 	std::string getName() const;
 	bool		getIsSigned() const;

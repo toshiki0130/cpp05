@@ -152,7 +152,7 @@ void test_bureaucrat_signForm()
     try
     {
         Bureaucrat b("Bureaucrat for presidential", 1);
-        RobotomyRequestForm f("normal");
+        PresidentialPardonForm f("normal");
         b.signForm(f);
         std::cout << b << std::endl; // 148
     }
