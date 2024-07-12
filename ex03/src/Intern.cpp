@@ -25,6 +25,7 @@ Intern::Intern(const Intern &ob)
 #if DEBUG
     std::cout << "[Intern copy constructor is called]" << std::endl;
 #endif
+    (void)ob;
 }
 // destructor
 Intern::~Intern()
@@ -39,6 +40,7 @@ Intern& Intern::operator=(const Intern &ob)
 #if DEBUG
     std::cout << "[Intern assignment operator is called]" << std::endl;
 #endif
+    (void)ob;
     return *this;
 }
 
@@ -48,7 +50,7 @@ Intern& Intern::operator=(const Intern &ob)
 // makeForm
 AForm* Intern::makeForm(const std::string& formName, const std::string& target)
 {
-    for (int i = 0; i < sizeof(_forms) / sizeof(*_forms); i++) {
+    for (size_t i = 0; i < sizeof(_forms) / sizeof(*_forms); i++) {
         if (formName == _forms[i]->getName()) {
             std::cout <<  "Intern creates " << formName << std::endl;
             return _forms[i]->makeCopy(target);
@@ -63,6 +65,7 @@ AForm* Intern::makeForm(const std::string& formName, const std::string& target)
  * ===================================*/
 std::ostream& operator<<(std::ostream& os, const Intern& x)
 {
+    (void)x;
     os << "I am Intern"; 
     return os;
 }
